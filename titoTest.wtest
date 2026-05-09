@@ -1,16 +1,26 @@
 import bebidas.*
 import tito.*
+import frutas.*
 
 describe "Tests de Tito" {
-  test "Tito consume 10 de Whisky y su sustancia actual es Whisky" {
-    tito.consumir(10, whisky)
-    assert.equals(whisky, tito.sustanciaActual())
-    // assert.equals(1,1) → devuelve TRUE
-    // assert.equals(1,2) → devuelve FALSE
-  }
+  test "Tito consume 250 de licuado de frutas echo con manzana y naranja y su velocidad es 262.5" {
+    licuadoDeFrutas.agregarFruta(manzana)
+    licuadoDeFrutas.agregarFruta(naranja)
+    tito.consumir(250, licuadoDeFrutas)
+    assert.equals(262.5, tito.velocidad())
+    
+    }
 
-  test "Tito consume 10 de Whisky y su dosis consumida es 10" {
-    tito.consumir(10, whisky)
-    assert.equals(10, tito.dosisConsumida())
-  }
+    test "tito consume 50 de un coctel de whisky y agua saborizada con whisky y su velocidad es 0.76" {
+      aguaSaborizada.saborizar(whisky)
+      coctel.agregarBebida(whisky)
+      coctel.agregarBebida(aguaSaborizada)
+      tito.consumir(50, coctel)
+    assert.equals(0.76265, tito.velocidad())
+    
+    }
+
 }
+
+
+
